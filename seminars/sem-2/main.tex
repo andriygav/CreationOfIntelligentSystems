@@ -1,0 +1,86 @@
+\documentclass[10pt,pdf,hyperref={unicode}]{beamer}
+
+\mode<presentation>
+{
+\usetheme{boxes}
+\beamertemplatenavigationsymbolsempty
+
+\setbeamertemplate{footline}[page number]
+\setbeamersize{text margin left=0.5em, text margin right=0.5em}
+}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{bm}
+\usepackage{multirow}
+\usepackage{ragged2e}
+\usepackage{indentfirst}
+\usepackage{multicol}
+\usepackage{subfig}
+\usepackage{amsmath,amssymb}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage{comment}
+\usepackage{multicol}
+
+\usepackage[all]{xy}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows}
+
+\tikzstyle{name} = [parameters]
+\definecolor{name}{rgb}{0.5,0.5,0.5}
+
+\usepackage{caption}
+\captionsetup{skip=0pt,belowskip=0pt}
+
+\newtheorem{rustheorem}{Теорема}
+\newtheorem{russtatement}{Утверждение}
+\newtheorem{rusdefinition}{Определение}
+
+% colors
+\definecolor{darkgreen}{rgb}{0.0, 0.2, 0.13}
+\definecolor{darkcyan}{rgb}{0.0, 0.55, 0.55}
+
+\AtBeginEnvironment{figure}{\setcounter{subfigure}{0}}
+
+\captionsetup[subfloat]{labelformat=empty}
+
+%----------------------------------------------------------------------------------------------------------
+
+\title[Вводная лекция]{Создание Интеллектуальных Систем \\ Выбор задач}
+\author{А.\,В.\,Грабовой}
+
+\institute[]{Московский физико-технический институт}
+% \date[2022]{\small 10\;февраля\;2022\,г.}
+
+%---------------------------------------------------------------------------------------------------------
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+%----------------------------------------------------------------------------------------------------------
+\section{Задачи для команд}
+\begin{frame}{Задачи для команд}
+\bigskip
+
+Рассматривается задача аппроксимации показаний fMRI и iEEG для разных типов стимулов:
+\begin{enumerate}
+    \item аппроксимация fMRI по данным видео потока;
+    \item аппроксимация iEEG по данным видео потока;
+    \item аппроксимация fMRI по данным звукового потока;
+    \item аппроксимация iEEG по данным звукового потока.
+\end{enumerate}
+
+\bigskip
+
+Выборка для аппроксимации представлена в работе J. Berezutskay\footnotemark, в которой присутствуют различные типы параллельных сигналов.
+
+\bigskip
+\footnotetext[1]{\textit{Berezutskaya J., et al} Open multimodal iEEG-fMRI dataset from naturalistic stimulation with a short audiovisual film // Sci Data 9, 91, 2022.}
+\end{frame}
+
+
+\end{document}

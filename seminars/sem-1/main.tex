@@ -1,0 +1,162 @@
+\documentclass[10pt,pdf,hyperref={unicode}]{beamer}
+
+\mode<presentation>
+{
+\usetheme{boxes}
+\beamertemplatenavigationsymbolsempty
+
+\setbeamertemplate{footline}[page number]
+\setbeamersize{text margin left=0.5em, text margin right=0.5em}
+}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage{bm}
+\usepackage{multirow}
+\usepackage{ragged2e}
+\usepackage{indentfirst}
+\usepackage{multicol}
+\usepackage{subfig}
+\usepackage{amsmath,amssymb}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage{comment}
+\usepackage{multicol}
+
+\usepackage[all]{xy}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows}
+
+\tikzstyle{name} = [parameters]
+\definecolor{name}{rgb}{0.5,0.5,0.5}
+
+\usepackage{caption}
+\captionsetup{skip=0pt,belowskip=0pt}
+
+\newtheorem{rustheorem}{Теорема}
+\newtheorem{russtatement}{Утверждение}
+\newtheorem{rusdefinition}{Определение}
+
+% colors
+\definecolor{darkgreen}{rgb}{0.0, 0.2, 0.13}
+\definecolor{darkcyan}{rgb}{0.0, 0.55, 0.55}
+
+\AtBeginEnvironment{figure}{\setcounter{subfigure}{0}}
+
+\captionsetup[subfloat]{labelformat=empty}
+
+%----------------------------------------------------------------------------------------------------------
+
+\title[Вводная лекция]{Создание Интеллектуальных Систем \\ Вводная лекция}
+\author{А.\,В.\,Грабовой}
+
+\institute[]{Московский физико-технический институт}
+% \date[2022]{\small 10\;февраля\;2022\,г.}
+
+%---------------------------------------------------------------------------------------------------------
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+%----------------------------------------------------------------------------------------------------------
+\section{Идея курса}
+\begin{frame}{Идея курса}
+\bigskip
+\begin{enumerate}[1)]
+\justifying
+\item расширение курса ``Моя первая научная статья'',
+\item важна работа в командах --- 3--4 человека,
+\item еженедельная презентация работы команды за неделю:
+    \begin{itemize}
+    \justifying
+        \item каждые 3 недели выбирается один ответственный человек,
+        \item каждую неделю ответственный готовит презентацию на 5 минут о результатах всей команды,
+        \item в презентацию входит краткий план работ на следующую неделю.
+    \end{itemize}
+\item система чекпоинтов:
+    \begin{itemize}
+    \justifying
+        \item проект условно делиться на 4 части,
+        \item каждая часть рассчитана на 3 недели,
+        \item каждая часть проверяется по истечению срока соотвествующей части.
+    \end{itemize}
+\end{enumerate}
+
+\footnotetext[1]{Презентация должна содержать 2-3 слайда}
+\footnotetext[2]{На подготовку презентации не более 15 минут}
+\footnotetext[3]{Ответственный человек меняется каждые 3 недели}
+\end{frame}
+
+%----------------------------------------------------------------------------------------------------------
+\section{План отчетности по курсу}
+\begin{frame}{План отчетности по курсу}
+\bigskip
+\begin{table}[]
+\begin{tabular}{|c|c|c|}
+\hline
+Дата  & Чекпоинты                              & Балл \\ \hline
+13.09 & -                                      &      \\ \hline
+13.09 & Раздача проектов                       & 0    \\ \hline
+20.09 & -                                      &      \\ \hline
+27.09 & -                                      &      \\ \hline
+04.10 & Первый чекпоинт (анализ работ)         & 3    \\ \hline
+11.10 & -                                      &      \\ \hline
+18.10 & -                                      &      \\ \hline
+25.10 & Второй чекпоинт (теоретическая часть)  & 3    \\ \hline
+01.11 & -                                      &      \\ \hline
+08.11 & -                                      &      \\ \hline
+15.11 & Третий чекпоинт (эксперимент)          & 3    \\ \hline
+22.11 & -                                      &      \\ \hline
+29.11 & -                                      &      \\ \hline
+06.12 & Четвертый чекпоинт (структура проекта) & 3    \\ \hline
+13.12 & Зачет                                  & 0    \\ \hline
+\end{tabular}
+\end{table}
+\end{frame}
+
+%----------------------------------------------------------------------------------------------------------
+\section{План лекций}
+\begin{frame}{План лекций}
+\bigskip
+\begin{table}[]
+\begin{tabular}{|c|l|}
+\hline
+\textbf{Дата} & \multicolumn{1}{c|}{\textbf{Тема лекции}}                 \\ \hline
+13.09         & Вводная лекция                                            \\ \hline
+13.09         & Обсуждения и выбор проектов                               \\ \hline
+20.09         & Краткий экскурс по LaTeX, GitHub, Jupyter Notebook        \\ \hline
+27.09         & Структура научной статьи                                  \\ \hline
+04.10         & Первый чекпоинт (анализ работ)                            \\ \hline
+11.10         & Структура научного проекта                                \\ \hline
+18.10         & Разбор основных проблем при работе с Jupyter Notebook     \\ \hline
+25.10         & Второй чекпоинт (теоретическая часть)                     \\ \hline
+01.11         & Повторяемый вычислительный эксперимент с внешними данными \\ \hline
+08.11         & Написания повторяемого кода вычислительного эксперимента  \\ \hline
+15.11         & Третий чекпоинт (эксперимент)                             \\ \hline
+22.11         & Документация кода вычислительного эксперимента            \\ \hline
+29.11         & Докернизация кода вычислительного эксперимента            \\ \hline
+06.12         & Четвертый чекпоинт (структура проекта)                    \\ \hline
+13.12         & Зачет                                                     \\ \hline
+\end{tabular}
+\end{table}
+\end{frame}
+
+%----------------------------------------------------------------------------------------------------------
+\section{Игра в команду}
+\begin{frame}{Игра в команду}
+\bigskip
+
+\begin{itemize}
+    \item в проекте участвует 3--4 человека,
+    \item перед каждым этапом проекта назначается один ответственный человек за данный этап;
+    \item ответственный распределяет задачи в рамках одного этапа;
+    \item ответственный следит за выполнением задач всех участников;
+    \item на каждом семинаре ответственный делает краткий доклад по выполненным задачам и по плану на следующую неделю;
+    \item при чекпоенте рассказывается доклад по всему этапу.
+\end{itemize}
+\end{frame}
+
+\end{document}
